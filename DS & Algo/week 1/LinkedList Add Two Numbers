@@ -1,0 +1,143 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int count =0;
+        ListNode temp = l1;
+        ListNode temp1 = l2;
+        int flag=0;
+        if(l1==null && l2==null){
+            return l1;
+        }
+        if(temp.next==null && temp1.next==null){
+            temp.val = temp1.val + temp.val;
+            if(temp.val>9){
+                temp.val = temp.val%10;
+                temp.next = new ListNode(1);
+                return temp;
+            }else{
+                return temp;
+            }
+        }
+        while(temp!=null && temp1!=null){
+            count++;
+            temp=temp.next;
+            temp1 = temp1.next;
+            if(temp1==null){
+                flag=1;
+            }
+        }
+        temp = l1;
+        temp1 = l2;
+        ListNode finalList = null;
+        int rem = 0;        
+        if(flag==1){
+            
+            finalList = temp;
+            while(temp1!=null){
+                finalList.val = finalList.val + temp1.val + rem;
+                if(finalList.val>9){
+                    int local = finalList.val;
+                    finalList.val = finalList.val%10;
+                    rem = local/10;
+                }else{
+                    rem = 0;
+                }
+            
+                finalList = finalList.next;
+                temp1 = temp1.next;
+            }
+            if(rem>0){
+                if(finalList!=null){
+                    finalList.val = finalList.val + rem;
+                    while(finalList.val>9&&finalList.next !=null){
+                        int loc = finalList.val;
+                        finalList.val = finalList.val%10;
+                        rem = loc/10;                        
+                        finalList = finalList.next;
+                        finalList.val = finalList.val+ rem;
+                       
+                    }
+                    if(rem>0){
+                        if(finalList.next==null){
+                            if(finalList.val>9){                                
+                                finalList.val = finalList.val%10;
+                            }else{
+                                rem = 0;
+                            }
+                        }
+                        if(rem>0&&finalList.next==null){
+                        finalList.next = new ListNode(rem);
+                        }
+                    }
+                }
+                else{
+                    finalList = temp;
+                    while(finalList.next!=null){
+                        finalList = finalList.next;
+                    }
+                    finalList.next = new ListNode(rem);
+                }
+            }
+            
+            
+        }else{
+            finalList = temp1;
+            while(temp!=null){
+                finalList.val = finalList.val + temp.val + rem;
+                if(finalList.val>9){
+                    int local = finalList.val;
+                    finalList.val = finalList.val%10;
+                    rem = local/10;
+                }else{
+                    rem = 0;
+                }
+                finalList = finalList.next;
+                temp = temp.next;
+            }
+            if(rem>0){
+                if(finalList!=null){
+                    finalList.val = finalList.val + rem;
+                    while(finalList.val>9&&finalList.next !=null){
+                        int loc = finalList.val;
+                        finalList.val = finalList.val%10;
+                        rem = loc/10;                        
+                        finalList = finalList.next;
+                        finalList.val = finalList.val+ rem;
+                    }
+                    if(rem>0){
+                        if(finalList.next==null){
+                            if(finalList.val>9){                                
+                                finalList.val = finalList.val%10;
+                            }else{
+                                rem = 0;
+                            }
+                        }
+                        if(rem>0&&finalList.next==null){
+                        finalList.next = new ListNode(rem);
+                        }
+                    }
+                }
+                else{
+                    finalList = temp1;
+                    while(finalList.next!=null){
+                        finalList = finalList.next;
+                    }
+                    finalList.next = new ListNode(rem);
+                }
+            }
+            temp = temp1;
+        
+        }
+        
+        return temp;
+    }
+}
