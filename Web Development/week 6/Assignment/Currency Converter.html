@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>           
+            .box {
+            background-color: rgba(255, 255, 255, 0.76);
+            width: 400px;
+            border: 10px solid rgb(51, 77, 51);
+            padding: 50px;
+            margin: 20px;
+            }
+            .card-panel {
+                -webkit-transition: -webkit-box-shadow .25s;
+                transition: -webkit-box-shadow .25s;
+                transition: box-shadow .25s;
+                transition: box-shadow .25s, -webkit-box-shadow .25s;
+                padding: 24px;
+                margin: .5rem 0 1rem 0;
+                border-radius: 2px;
+                background-color: #fff;
+            }
+            .z-depth-4 {
+                -webkit-box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -7px rgba(0,0,0,0.2);
+                box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -7px rgba(0,0,0,0.2);
+            }
+        </style>
+       <script>
+           function calCulate(event){
+            var inputVal = document.getElementById("curr").value;   
+            document.getElementById("converter").value = event * inputVal;
+            }
+       </script>
+        <title>Currancy Converter</title>
+    </head>
+    <body>
+        
+  <div  class="card-panel z-depth-4 box">
+    <h1 style="text-align: center;font-size: large;">Currancy Converter</h1>
+    <div class="row">
+        <div class="col m12 s12">
+            <form>
+                <label class="active">
+                    Amount
+                </label><br>
+                <input style="padding: 10px;border-radius: 6px;width: 100%;"  placeholder="Input Value" type="number"
+                min="1" value="1" name="Currancy" id="curr"><br>
+                <br> <label>Currency</label><br>
+                <select onchange="calCulate(value)" id="selVal" name="selector" style="padding: 10px;border-radius: 6px;width: 100%;">
+                    <option disabled selected>Select Currancy</option>
+                    <option value="0.01">British Pound</option>
+                    <option value="0.011">Euro</option>
+                    <option value="0.018">Australian Dollar</option>
+                    <option value="0.085">Danish Krone</option>
+                    <option value="1.4">Japanese Yen</option>
+                    <option value="0.013">US Dollar</option>
+                    <option value="0.05">UAE Dirhams</option>
+                    <option value="0.116">Swedish Krona</option>
+                    <option value="0.012">Swiss Franc</option>
+                </select><br>
+                <br><label>Amount</label><br>
+                <input style="padding: 10px;border-radius: 6px;width: 100%;" disabled placeholder="Out Put" type="text" name="conver" id="converter">
+            </form>
+        </div>
+    </div>
+   
+  </div>
+    </body>
+</html>
