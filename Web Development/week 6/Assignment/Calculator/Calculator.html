@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <script src="CalculaterJS.js"></script>
+        <style>
+            .box {
+            background-color: rgba(255, 255, 255, 0.76);
+            width: 400px;
+            border: 10px solid rgb(9, 17, 9);
+            padding: 50px;
+            margin: 20px;
+            position: absolute;
+            }
+            .card-panel {
+                -webkit-transition: -webkit-box-shadow .25s;
+                transition: -webkit-box-shadow .25s;
+                transition: box-shadow .25s;
+                transition: box-shadow .25s, -webkit-box-shadow .25s;
+                padding: 24px;
+                margin: .5rem 0 1rem 0;
+                border-radius: 2px;
+                background-color: #fff;
+            }
+            .z-depth-4 {
+                -webkit-box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -7px rgba(0,0,0,0.2);
+                box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -7px rgba(0,0,0,0.2);
+            }
+        input[type="button"] 
+         { 
+         background-color:rgb(84, 211, 205); 
+         color: black; 
+         border: solid black 2px; 
+         
+         width:100% 
+         } 
+         input[type="button"]:hover 
+         {
+             background-color: #c5dd3b
+        }
+         input[type="text"] 
+         { 
+         background-color:white; 
+         border: solid black 2px; 
+         width:100% 
+         } 
+        </style>
+        <title>Calculator</title>
+    </head>
+    <body>
+        
+  <div  class="box card-panel z-depth-4">
+    <h1 style="text-align: center;font-size: large;">Calculator</h1>
+    <table >
+        <tbody style="border: 5px;">
+           <tr> 
+            <td colspan="3">
+                <input type="text" id="input" value="">
+            </td>              
+             <td>
+                <input type="button" value="c" onclick="clr('c')"/>
+             </td>  
+             <td>
+                <input type="button" value="<--" onclick="backspace('c')"/>
+             </td>              
+           </tr>
+           <tr>
+            <td>
+                <input type="button" value="1" onclick="dis('1')"/>
+            </td>
+            <td>
+                <input type="button" value="2" onclick="dis('2')"/>
+            </td>
+            <td>
+                <input type="button" value="3" onclick="dis('3')"/>
+            </td>
+            <td>
+                <input type="button" value="/" onclick="dis('/')"/>
+            </td>
+            <td>
+                <input type="button" value="SIN" onclick="sin()"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" onclick="dis('4')"/>
+            </td>
+            <td>
+                <input type="button" value="5" onclick="dis('5')"/>
+            </td>
+            <td>
+                <input type="button" value="6" onclick="dis('6')"/>
+            </td>
+            <td>
+                <input type="button" value="-" onclick="dis('-')"/>
+            </td>
+            <td>
+                <input type="button" value="COS" onclick="cos()"/>
+            </td>
+        </tr> <tr>
+            <td>
+                <input type="button" value="7" onclick="dis('7')"/>
+            </td>
+            <td>
+                <input type="button" value="8" onclick="dis('8')"/>
+            </td>
+            <td>
+                <input type="button" value="9" onclick="dis('9')"/>
+            </td>
+            <td>
+                <input type="button" value="+" onclick="dis('+')"/>
+            </td>
+            <td>
+                <input type="button" value="TAN" onclick="tan()"/>
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <input type="button" value="." onclick="dis('.')"/>
+            </td>
+            <td>
+                <input type="button" value="0" onclick="dis('0')"/>
+            </td>
+            <td>
+                <input type="button" value="=" onclick="result('=')"/>
+            </td>
+            <td>
+                <input type="button" value="*" onclick="dis('*')"/>
+            </td>
+            <td>
+                <input type="button" value="N!" onclick="fact()"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="x^2" onclick="squre()"/>
+            </td>
+            <td>
+                <input type="button" value="ln10" onclick="log()"/>
+            </td>
+            <td>
+                <input type="button" value="10^x" onclick="tanPow()"/>
+            </td>
+            <td>
+                <input type="button" value="sqrt" onclick="sqrt()"/>
+            </td>
+            <td>
+                <input type="button" value="e" onclick="power()"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    
+   
+  </div>
+    </body>
+</html>
