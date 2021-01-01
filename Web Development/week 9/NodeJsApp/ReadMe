@@ -1,0 +1,40 @@
+Install nodejs (https://github.com/nvm-sh/nvm or )
+
+Install nodemon package globally.
+
+Create a sample node js project
+
+Install moment package as a dependency in your project (https://www.npmjs.com/package/moment)
+
+Set an environment variable NODE_ENV (it’s value should be equal to either development or production)
+
+Pass a command line argument --stream (with a value true or false)
+Ex: node index.js --stream true OR node index.js --stream false
+
+(Note: If you find the argument --stream in the arguments array, the value at the next index in the arguments array is considered as its value)
+
+Create an event emitter
+
+Add an event listener to listen to the event ‘createFolders’ which should trigger a method to create the following folders if not exists based on the NODE_ENV variable from the environment variables:
+
+development/src, development/dest OR
+
+production/src, production/dest
+
+Add an event listener to listen to the event ‘createSourceFile’ which should trigger a method to create a file in the src folder with the filename as YYYY_MM_DD_HH_MM_SS.txt (Use moment package to generate the filename) and add some random text to it. (https://momentjs.com/ )
+
+Add an event listener ‘createDestFile’ and upon listening event, based on the --stream argument value:
+
+If true, create the dest file with the same filename as src file but in the dest directory using streaming mechanism. (Try creating individual streams and then use on data, on error, on end events and using pipe)
+
+If false, create the dest file with the same filename as src file but in the dest directory using file system methods. (Try creating the file using both synchronous methods and asynchronous methods)
+
+Now emit the events in way that the following steps are executed synchronously
+
+Folders are created (by emitting ‘createFolders’ event)
+
+Source file is created (by emitting ‘createSourceFile’ event)
+
+Destination file is created (by emitting ‘createDestFile’ event)
+
+Add a SIGINT listener to the process and upon listening to the event, console ‘Received Interrupt Signal’ to stdout and exit the process.
