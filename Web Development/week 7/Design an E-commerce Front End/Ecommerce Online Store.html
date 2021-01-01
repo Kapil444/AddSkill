@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cool Veggies</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+
+    /* Remove the jumbotron's default bottom margin */
+    .jumbotron {
+      margin-bottom: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    .myTable {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ddd;
+      font-size: 18px;   
+      float: right;   
+    }
+    .form-inline1  {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    border-block-color: red;
+}
+   
+  </style>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#"> <strong> Best Veggies </strong> </a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">Stores</a></li>
+          <li><a href="#">Contact</a></li>         
+        </ul>
+        <ul class="nav navbar-nav">
+          <li><input class="form-control" id="searchdata" type="text" onkeyup="search(value)"  class="myTable" placeholder="Search for names.." title="Type in a name">         
+        </li>
+        <ul class="nav navbar-nav">
+        <select class="form-control " onchange="selectCategory(value)" name="fruitCategory" id="catgory">
+          <option value="Fruits">Fruits</option>
+          <option value="Vegetables">Vegetables</option>
+        </select>
+      </ul>
+        </ul>  
+        <ul class="nav navbar-nav navbar-right">          
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="row" class="row">
+      <div id=""   class="col-sm-4 Vegetables" onmouseout="addEventListner1(event)" onblur="focus(event)" onmouseover="addEventListner(event)" >
+        <div class="panel panel-primary ">
+          <div class="panel-heading">Tomatoes </div>
+          <div class="panel-body"><img src="cart Images/tomato.jpg" class="img-responsive"
+              style="width:100%; height: 250px;" alt="Image"></div>
+          <div class="panel-footer">
+            <a href="cart.html" id="tomatoButton" type="button" class="btn btn-primary">Buy
+              Tomato's</a>
+          </div>
+        </div>
+      </div>
+      <div id="Vegetables" class="col-sm-4 Vegetables" onmouseout="addEventListner1(event)" onmouseover="addEventListner(event)">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Cucumber</div>
+          <div class="panel-body"><img src="cart Images/cucumber.jpg" class="img-responsive"
+              style="width:100%;  height: 250px;" alt="Image"></div>
+          <div class="panel-footer">
+            <a href="cart.html" id="cucumberButton" type="a" class="btn btn-primary">Buy
+              Cucumber's</a>
+          </div>
+        </div>
+      </div>
+      <div id="Vegetables" class="col-sm-4 Vegetables" onmouseout="addEventListner1(event)" onmouseover="addEventListner(event)">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Chilli's</div>
+          <div class="panel-body"><img src="cart Images/chilli.jpg" class="img-responsive"
+              style="width:100%; height: 250px" alt="Image"></div>
+              <div class="panel-footer">
+                <a href="cart.html" id="chilliButton" type="a" class="btn btn-primary">Buy
+                Chilli's </a>
+              </div>
+        </div>
+      </div>
+      
+      <div id="Fruits" class="col-sm-4 Fruits" onmouseout="addEventListner1(event)" onmouseover="addEventListner(event)">
+        <div class="panel panel-primary ">
+          <div class="panel-heading">Strawberry's </div>
+          <div class="panel-body"><img id="strawberyImg" src="cart Images/strawbery.jpg" class="img-responsive"
+              style="width:100%; height: 250px;" alt="Image"></div>
+           <div class="panel-footer">
+            <a href="cart.html" id="StrawberryButton" type="a" class="btn btn-primary">Buy
+              Strawberry's</a>
+          </div>
+        </div>
+      </div>
+      <div id="Fruits" class="col-sm-4 Fruits" onmouseout="addEventListner1(event)" onmouseover="addEventListner(event)">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Mango's</div>
+          <div class="panel-body"><img src="cart Images/mango.jpg" class="img-responsive"
+              style="width:100%;  height: 250px;" alt="Image"></div>
+              <div class="panel-footer">
+                <a href="cart.html" id="MangoButton" type="a" class="btn btn-primary">Buy
+                  Mango's</a>
+              </div>
+        </div>
+      </div>
+      <div id="Fruits" class="col-sm-4 Fruits" onmouseout="addEventListner1(event)" onmouseover="addEventListner(event)">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Pineapple's</div>
+          <div class="panel-body"><img src="cart Images/pineapple.jpg" class="img-responsive"
+              style="width:100%; height: 250px" alt="Image"></div>
+              <div class="panel-footer">
+                <a href="cart.html" id="PineappleButton" type="a" class="btn btn-primary">Buy
+                  Pineapple's</a>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+
+ 
+  <br><br>
+
+  <footer class="container-fluid text-center">
+    <p>Online Store Copyright</p>
+    <form class="form-inline">Get deals:
+      <input type="email" id="email" value="" onclick="inputMethod()"  class="form-control" size="50" placeholder="Email Address">
+      <button type="button" id="signUp" onclick="signUpMethod()" class="btn btn-danger">Sign Up</button>
+    </form>
+  </footer>
+
+</body>
+<script>
+
+function signUpMethod() {
+  let email =document.getElementById("email").value;
+  let str = new String(email);
+  let inputBox = document.getElementById("email");
+  if(!str.includes("@")){     
+     inputBox.className = "form-inline1 form-control"
+     console.log("Invalid email");
+  }
+}
+let map = new Map();
+function search(event) {
+  if(map.get(event)!=undefined){
+    let count = map.get(event);
+    map.set(event,++count);
+  }else{    
+    map.set(event,1);
+  }
+   var input, filter, row, col1, td, i, txtValue;
+  input = document.getElementById("searchdata");
+  filter = input.value.toUpperCase();
+  let row1 = document.getElementById("row");
+  col1 = row1.getElementsByClassName("col-sm-4")
+  for (i = 0; i < col1.length; i++) {
+      txtValue = col1[i].textContent || col1[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        col1[i].style.display = "";
+      } else {
+        col1[i].style.display = "none";
+      }
+    }
+    console.log(map)       
+  }
+ 
+
+function selectCategory(event){  
+  console.log(event)
+  var input, filter, row, col1, td, i, txtValue;
+  filter = event;
+  let row1 = document.getElementById("row");
+  if(filter=="Fruits"){
+    col1 = row1.getElementsByClassName("Vegetables");
+    for (i = 0; i < col1.length; i++) {
+      col1[i].style.display = "none";
+    }
+    col1 = row1.getElementsByClassName("Fruits");
+    for (i = 0; i < col1.length; i++) {
+      col1[i].style.display = "";
+    }
+  }else{
+    row1.getelem
+    col1 = row1.getElementsByClassName("Fruits");
+    for (i = 0; i < col1.length; i++) {
+      col1[i].style.display = "none";
+    }
+    col1 = row1.getElementsByClassName("Vegetables");
+    for (i = 0; i < col1.length; i++) {
+      col1[i].style.display = "";
+    }
+  }
+   
+}
+function addEventListner1(event){
+  event.target.style.background = ''
+}
+function addEventListner(event){ 
+  event.target.style.backgroundColor = 'lightblue'
+}
+function focus(event) {
+   console.log("focus event",event)
+}
+ function inputMethod() {
+  let inputBox = document.getElementById("email");
+  inputBox.className = "form-inline form-control"
+ } 
+  
+  class Product {
+    name=String;
+    category=String;
+    imgUrl = String;
+    price = String;
+  }
+ let productList = new Array();
+    product = new Product();
+    product.name = "Tomato";
+    product.category = "Veg";
+    product.imgUrl = "cart Images/tomato.jpg";
+    price="20"
+    productList.push(product)
+
+    product = new Product();
+    product.name = "Cucumber's";
+    product.category = "Veg";
+    product.imgUrl = "cart Images/tomato.jpg";
+    price="50"
+    productList.push(product)
+
+    product = new Product();
+    product.name = "Chilli's";
+    product.category = "Veg";
+    product.imgUrl = "cart Images/tomato.jpg";
+    price="100"
+    productList.push(product)
+
+    product = new Product();
+    product.name = "Strawberry's";
+    product.category = "Froot";
+    product.imgUrl = "cart Images/tomato.jpg";
+    price="20"
+    productList.push(product)
+
+    product = new Product();
+    product.name = "Mango's";
+    product.category = "Froot";
+    product.imgUrl = "cart Images/tomato.jpg";
+    price="20"
+    productList.push(product)
+
+    product = new Product();
+    product.name = "Pineapple's";
+    product.category = "Froot";
+    product.imgUrl = "cart Images/tomato.jpg";
+    price="20"
+    productList.push(product)
+    let div = document.getElementById("tomatoDiv");
+      // for(let i = 0;i<6;i++){
+      //   let div1 = document.createElement("div");
+      //   let text = document.createTextNode("Testing");
+      //   div1.append(text);
+      //   div.after(div1);
+      // }
+  console.log(productList);
+</script>
+</html>
